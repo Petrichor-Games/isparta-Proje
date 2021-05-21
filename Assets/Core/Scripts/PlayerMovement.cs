@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Health < 0)
+        if (Health <= 0)
         {
             Death();
         }
@@ -117,9 +117,10 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         
-        if (other.collider.CompareTag("engel"))
+        if (other.collider.GetComponent<EngelTag>()!=null)
         {
             Debug.Log("CARPTIK");
+            Destroy(other.collider.gameObject);
             Health -= 20;
         }
     }

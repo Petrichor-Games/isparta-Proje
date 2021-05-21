@@ -112,6 +112,30 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2078433886022922336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888631039193884701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd8194f34181f84ea6cb9749f491d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3415694232074096484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6888631040180056169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd8194f34181f84ea6cb9749f491d09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6888631038584866623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +400,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99272a2bd7033cc4b9f5e5e7fb427159, type: 3}
+--- !u!1 &6888631039193884701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 171996, guid: 99272a2bd7033cc4b9f5e5e7fb427159,
+    type: 3}
+  m_PrefabInstance: {fileID: 6888631039193987009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6888631039194050397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 465052, guid: 99272a2bd7033cc4b9f5e5e7fb427159,
@@ -443,6 +473,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a279134aaee12e9438b491ed0c083ba3, type: 3}
+--- !u!1 &6888631040180056169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 166268, guid: a279134aaee12e9438b491ed0c083ba3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6888631040180222229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6888631040180322243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 427734, guid: a279134aaee12e9438b491ed0c083ba3,
