@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/projectSettingsUpdater.xml
+/contentModel.xml
+/.idea.isparta-Proje.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\Prince\Documents\GitHub\isparta-Proje\.idea\.idea.isparta-Proje\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
