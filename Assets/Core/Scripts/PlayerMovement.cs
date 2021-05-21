@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private LANE e_Lane = LANE.Mid;
     private float Xcordinate = 0f;
+    public float Health = 100f;
+        
     private bool SwipeLeft;
     public float Speed = 7f;
     private bool SwipeRight;
@@ -55,9 +58,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-        
-        
-
         if (SwipeLeft)
         {
             if (e_Lane == LANE.Mid)
@@ -89,5 +89,13 @@ public class PlayerMovement : MonoBehaviour
         var vector = new Vector3(x, 0, Time.deltaTime * Speed);
 
         cc.Move(vector);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Engel"))
+        {
+            Health -= 20;
+        }
     }
 }
