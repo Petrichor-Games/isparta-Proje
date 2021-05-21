@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GM.e_State == STATE.RUN)
         {
-            animator.SetTrigger("Running");
+            
             SwipeLeft = Input.GetKeyDown(KeyCode.A);
             SwipeRight = Input.GetKeyDown(KeyCode.D);
             float x1 = 0;
@@ -116,8 +116,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Engel"))
+        
+        if (other.collider.CompareTag("engel"))
         {
+            Debug.Log("CARPTIK");
             Health -= 20;
         }
     }
