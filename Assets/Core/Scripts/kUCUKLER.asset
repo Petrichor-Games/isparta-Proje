@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: kUCUKLER
   m_EditorClassIdentifier: 
   chunkSize: {x: 10, y: 10}
-  LevelChunks: []
-  entryDirection: 0
-  exitDirection: 0
+  LevelChunks:
+  - {fileID: 2179572027419137813, guid: 20f3ffc1e122e3b44b64b64ce33f2ffa, type: 3}
+  entryDirection: 2
+  exitDirection: 2

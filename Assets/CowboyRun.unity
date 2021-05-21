@@ -406,7 +406,7 @@ MonoBehaviour:
   LevelChunkData:
   - {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
   FirstChunk: {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
-  spawnOrigin: {x: 0, y: 0, z: 0}
+  spawnOrigin: {x: 0, y: 0, z: -45}
   chunkstospawn: 10
 --- !u!1 &1511644161 stripped
 GameObject:
