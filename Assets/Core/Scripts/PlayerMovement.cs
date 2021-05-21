@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private bool SwipeLeft;
     public float Speed = 7f;
     private bool SwipeRight;
+    private Animator animator;
     public float xValue;
     private CharacterController cc;
     private GameManager GM;
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         cc = GetComponent<CharacterController>();
     }
@@ -37,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GM.e_State == STATE.RUN)
         {
+            animator.SetTrigger("Running");
             SwipeLeft = Input.GetKeyDown(KeyCode.A);
             SwipeRight = Input.GetKeyDown(KeyCode.D);
             float x1 = 0;
