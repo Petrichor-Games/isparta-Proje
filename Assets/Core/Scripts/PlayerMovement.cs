@@ -32,6 +32,31 @@ public class PlayerMovement : MonoBehaviour
     {
         SwipeLeft = Input.GetKeyDown(KeyCode.A);
         SwipeRight = Input.GetKeyDown(KeyCode.D);
+        float x1 = 0;
+        float x2;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            x1 = Input.mousePosition.x;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            x2 = Input.mousePosition.x;
+
+            if ( x1>x2)
+            {
+                SwipeLeft = true;
+            }
+
+            if (x2 > x1)
+            {
+                SwipeRight = true;
+            }
+        }
+        
+        
+        
 
         if (SwipeLeft)
         {
