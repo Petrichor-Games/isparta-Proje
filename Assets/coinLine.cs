@@ -24,7 +24,7 @@ public class coinLine : MonoBehaviour
 
     void SpawnCoins(GameObject asd)
     {
-        int coinsToSpawn = 5;
+        int coinsToSpawn = 3;
         for (int i = 0; i < coinsToSpawn; i++)
         {
             GameObject temp = Instantiate(coinPrefab, asd.transform);
