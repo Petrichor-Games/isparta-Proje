@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Touch;
 using UnityEngine;
 
 [System.Serializable]
@@ -25,9 +26,20 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController cc;
     private GameManager GM;
     public Transform Player;
+    public GameObject CamLoc;
     private Vector3 desiredPosition;
     private Rigidbody rb;
     private Vector3 movement;
+    public Camera camera;
+    public GameObject MermiLoc;
+    public GameObject MermiPrefab;
+    
+    float timeElapsed;
+    float lerpDuration = 3;
+
+    float startValue=0;
+    float endValue=10;
+    float valueToLerp;
 
 
     // Start is called before the first frame update
@@ -60,6 +72,15 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(vector);
     }
+
+    public void Shoot(LeanFinger LF)
+    {
+        Ray hit = LF.GetStartRay(camera);
+        var mermi = Instantiate(MermiPrefab, MermiLoc.transform.position, MermiLoc.transform.rotation);
+        mermi.GetComponent<Rigidbody>().AddForce(LF.GetWorldPosition(500) * 10f);
+        Destroy(mermi, 5f);
+    }
+    
 
     public void SwipeitRight()
     {
@@ -109,7 +130,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            
+            camera.transform.position = Vector3.Lerp(camera.transform.position, CamLoc.transform.position, Time.deltaTime);
+            camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 98, Time.deltaTime);
         }
     }
 
@@ -145,6 +167,9 @@ public class PlayerMovement : MonoBehaviour
         {
             GM.ChangeState(1);
             animator.SetTrigger("Idle");
+            rb.velocity = Vector3.zero;
+            
+            
         }
     }
 }

@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "258d2c908c0c7ece",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "258d2c908c0c7ece",
+        "name": "com.DefaultCompany.ispartaProje",
+        "processId": 28953,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -43,6 +43,12 @@
             "name": "com.DefaultCompany.ispartaProje",
             "processId": 12018,
             "exited": true
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 28953,
+            "exited": false
         }
     ],
     "m_Tags": {
