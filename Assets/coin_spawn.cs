@@ -24,7 +24,8 @@ public class coin_spawn : MonoBehaviour
         }
 
         //Add to the player's score
-        GameManager.inst.score++;
+        //GameManager.inst.score++;
+        Game.Instance.Coins++;
         
         //Destroy this coin object
         Destroy(gameObject);

@@ -17,6 +17,7 @@ public class Shop : MonoBehaviour
 
     GameObject ItemTemplate;
     GameObject g;
+    public GameObject TextCoins;
     [SerializeField] Transform ShopScrollView;
 
     Button buyBtn;
@@ -51,6 +52,7 @@ public class Shop : MonoBehaviour
             buyBtn = ShopScrollView.GetChild(itemIndex).GetChild(2).GetComponent<Button>();
             buyBtn.interactable = false;
             buyBtn.transform.GetChild(0).GetComponent<Text>().text = "PURCHASED";
+            TextCoins.GetComponent<Text>().text = Game.Instance.Coins.ToString();
 
         }
         else
@@ -64,6 +66,7 @@ public class Shop : MonoBehaviour
     //open close shop
     public void OpenShop()
     {
+        TextCoins.GetComponent<Text>().text = Game.Instance.Coins.ToString();
         gameObject.SetActive(true);
     }
     public void CloseShop()
