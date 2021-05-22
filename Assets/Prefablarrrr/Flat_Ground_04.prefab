@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8405898706826853382}
   - component: {fileID: 8363767405541826947}
+  - component: {fileID: 7947958721752671338}
   m_Layer: 0
   m_Name: coinSpawner2
   m_TagString: Untagged
@@ -44,6 +45,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 0.35, z: 20}
   m_Center: {x: -2, y: 0.5, z: -5}
+--- !u!114 &7947958721752671338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2370659624225624902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f47f3a147045714e935136260f6c58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
+    type: 3}
+  coinSpawn: {fileID: 2370659624225624902}
 --- !u!1 &2831226817049701730
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7734615396697597232}
   - component: {fileID: 2247186598798939292}
+  - component: {fileID: 8601704599949670431}
   m_Layer: 0
   m_Name: coinSpawner
   m_TagString: Untagged
@@ -233,6 +250,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 0.35, z: 20}
   m_Center: {x: 2, y: 0.5, z: -5}
+--- !u!114 &8601704599949670431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318067772227359620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f47f3a147045714e935136260f6c58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
+    type: 3}
+  coinSpawn: {fileID: 6318067772227359620}
 --- !u!65 &2034671412320827308
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -300,6 +332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6494442218931229222}
   - component: {fileID: 3670129243217324951}
+  - component: {fileID: 6840884819438592390}
   m_Layer: 0
   m_Name: coinSpawner1
   m_TagString: Untagged
@@ -334,6 +367,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.35, y: 0.35, z: 20}
   m_Center: {x: 0, y: 0.5, z: -5}
+--- !u!114 &6840884819438592390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7501711236599304777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f47f3a147045714e935136260f6c58b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
+    type: 3}
+  coinSpawn: {fileID: 7501711236599304777}
 --- !u!65 &4406122895744392375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -733,15 +781,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2104aa152d99894d8df3c31a9ee634b, type: 3}
---- !u!1 &4539043857318392891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 114218, guid: d2104aa152d99894d8df3c31a9ee634b,
-    type: 3}
-  m_PrefabInstance: {fileID: 4539043857318283793}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4539043857318743519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 460750, guid: d2104aa152d99894d8df3c31a9ee634b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4539043857318283793}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4539043857318392891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 114218, guid: d2104aa152d99894d8df3c31a9ee634b,
     type: 3}
   m_PrefabInstance: {fileID: 4539043857318283793}
   m_PrefabAsset: {fileID: 0}
