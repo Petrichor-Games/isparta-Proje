@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2441c79940171dc43b33badf9fe97828, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.4693824, g: 0.19594324, b: 0.14082982, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -780,8 +780,6 @@ MonoBehaviour:
   FirstChunk: {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
   spawnOrigin: {x: 0, y: 0, z: -45}
   chunkstospawn: 10
-  OyunSonuBolumu: {fileID: 5425339147837526598, guid: 5f10310c2c3b59c4fbb8ff2c77366b87,
-    type: 3}
 --- !u!1 &1511644161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162200, guid: 93f8a13fb89985e4f8d0d8ecff94969a,
@@ -842,7 +840,7 @@ Camera:
   m_GameObject: {fileID: 1855743183}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.6556604, g: 0.7895702, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -883,13 +881,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855743183}
-  m_LocalRotation: {x: 0.15460978, y: -0, z: -0, w: 0.9879756}
-  m_LocalPosition: {x: 0.28, y: 4.71, z: -5.0599976}
+  m_LocalRotation: {x: 0.06785301, y: -0, z: -0, w: 0.9976953}
+  m_LocalPosition: {x: 0.122, y: 2.557, z: -3.862}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 374759590}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 17.788, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.781, y: 0, z: 0}
 --- !u!1 &2036880072
 GameObject:
   m_ObjectHideFlags: 0
