@@ -872,8 +872,6 @@ MonoBehaviour:
   chunkstospawn: 10
   OyunSonuBolumu: {fileID: 5425339147837526598, guid: 5f10310c2c3b59c4fbb8ff2c77366b87,
     type: 3}
-  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
-    type: 3}
 --- !u!1 &1511644161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162200, guid: 93f8a13fb89985e4f8d0d8ecff94969a,
@@ -929,6 +927,56 @@ Transform:
   m_Father: {fileID: 374759590}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -5.6, y: 0, z: 0}
+--- !u!1 &1715124293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715124295}
+  - component: {fileID: 1715124294}
+  m_Layer: 0
+  m_Name: CloudGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1715124294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715124293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03008d74080ecae45bb72b89bb270581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudPrefab: {fileID: 196700, guid: 7a7ada80b7910bb47aa7c5434361abb6, type: 3}
+  width: 150
+  depth: 5000
+  stepMin: 20
+  stepMax: 300
+  threshold: 0
+  noiseStrength: 1
+--- !u!4 &1715124295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715124293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40, y: 90, z: 3000}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1855743183
 GameObject:
   m_ObjectHideFlags: 0
