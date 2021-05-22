@@ -11,14 +11,15 @@ public class coinLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnCoins(coinSpawn);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        SpawnCoins(coinSpawn);
+     
+
     }
 
     void SpawnCoins(GameObject asd)
