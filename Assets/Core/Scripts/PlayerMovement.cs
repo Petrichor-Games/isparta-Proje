@@ -168,6 +168,7 @@ public class PlayerMovement : MonoBehaviour
         death = true;
         GM.ChangeState(2);
         animator.SetTrigger("Death");
+        var Metre = (transform.position.z + 26) / 100;
         //Destroy(GameObject.Find("Player") , 5f);
         menu.SetActive(true);
     }
@@ -187,7 +188,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (other.collider.GetComponent<EngelTag>()!=null)
         {
-            Debug.Log("CARPTIK");
             Destroy(other.collider.gameObject);
             Health -= 20;
             if (Speed> 21f)
