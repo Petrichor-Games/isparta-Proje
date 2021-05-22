@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform Player;
     private Vector3 desiredPosition;
     private Rigidbody rb;
+    private Vector3 movement;
 
 
     // Start is called before the first frame update
@@ -80,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
     {
         animator.SetTrigger("Jump");
         // rb.AddForce(0,10,0);
-         cc.Move(Vector3.up * 10f); 
-        
+         //cc.Move(Vector3.up * 50f); 
+         movement.y = 50f;
         Debug.Log("ZIPLA");
     }
 
@@ -90,9 +91,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GM.e_State == STATE.RUN)
         {
-            var vector = new Vector3(0, 0, Time.deltaTime * Speed);
-
+            
+            
+          
+ 
+            // Applying Gravity
+            if (cc.isGrounded == false)
+            {
+ 
+                movement.y += Physics.gravity.y * 0.05f;
+ 
+            }
+            var vector = new Vector3(0, movement.y * Time.deltaTime, Time.deltaTime * Speed);
+            // Applying Movement
             cc.Move(vector);
+
+            //cc.Move(vector);
         }
     }
 

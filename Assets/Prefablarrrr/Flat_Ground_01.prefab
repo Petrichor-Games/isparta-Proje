@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3298584722399228877}
   - component: {fileID: 3298584722398394065}
   - component: {fileID: 3298584722397067167}
+  - component: {fileID: 7453287508746227300}
   m_Layer: 0
   m_Name: Flat_Ground_01
   m_TagString: Untagged
@@ -88,6 +89,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7453287508746227300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298584722399316521}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.30324697, z: 20.080053}
+  m_Center: {x: 0, y: -0.16797984, z: 5.0400286}
 --- !u!65 &3540324168692035762
 BoxCollider:
   m_ObjectHideFlags: 0
