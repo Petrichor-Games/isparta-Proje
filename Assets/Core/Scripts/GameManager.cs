@@ -14,6 +14,16 @@ public class GameManager : MonoBehaviour
 {
     public STATE e_State = STATE.RUN;
 
+    public int score;
+    public static GameManager inst;
+
+
+    private void Awake()
+    {
+        inst = this;
+    }
+
+
     public void ChangeState(int state)
     {
         switch (state)

@@ -780,6 +780,8 @@ MonoBehaviour:
   FirstChunk: {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
   spawnOrigin: {x: 0, y: 0, z: -45}
   chunkstospawn: 10
+  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
+    type: 3}
 --- !u!1 &1511644161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 162200, guid: 93f8a13fb89985e4f8d0d8ecff94969a,
