@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cloudPrefab: {fileID: 196700, guid: 7a7ada80b7910bb47aa7c5434361abb6, type: 3}
-  width: 150
+  width: 200.13
   depth: 5000
   stepMin: 20
   stepMax: 300
@@ -1974,7 +1974,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715124293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40, y: 90, z: 3000}
+  m_LocalPosition: {x: 47.6, y: 90, z: 2400}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
