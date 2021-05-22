@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void SwipeitLeft()
     {
+        if (GM.GetState()==STATE.ATTACK)
+            return;
         if (e_Lane == LANE.Mid)
         {
             Xcordinate = -xValue;
@@ -61,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void SwipeitRight()
     {
+        if (GM.GetState()==STATE.ATTACK)
+            return;
         if (e_Lane == LANE.Mid)
         {
             Xcordinate = xValue;
@@ -79,22 +83,19 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
+        if (GM.GetState()==STATE.ATTACK)
+        return;
+        
         animator.SetTrigger("Jump");
-        // rb.AddForce(0,10,0);
-         //cc.Move(Vector3.up * 50f); 
-         movement.y = 10f;
+        movement.y = 10f;
         Debug.Log("ZIPLA");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GM.e_State == STATE.RUN)
+        if (GM.GetState() == STATE.RUN)
         {
-            
-            
-          
- 
             // Applying Gravity
             if (cc.isGrounded == false)
             {
@@ -105,8 +106,10 @@ public class PlayerMovement : MonoBehaviour
             var vector = new Vector3(0, movement.y * Time.deltaTime, Time.deltaTime * Speed);
             // Applying Movement
             cc.Move(vector);
-
-            //cc.Move(vector);
+        }
+        else
+        {
+            
         }
     }
 
@@ -133,6 +136,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("CARPTIK");
             Destroy(other.collider.gameObject);
             Health -= 20;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<OyunSonuTag>()!=null)
+        {
+            GM.ChangeState(1);
+            animator.SetTrigger("Idle");
         }
     }
 }

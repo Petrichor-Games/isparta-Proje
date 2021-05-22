@@ -12,10 +12,13 @@ public enum STATE
 
 public class GameManager : MonoBehaviour
 {
-    public STATE e_State = STATE.RUN;
+    private STATE e_State = STATE.RUN;
 
     public int score;
     public static GameManager inst;
+
+
+    public STATE GetState() => e_State;
 
 
     private void Awake()
