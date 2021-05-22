@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Main.unity
+    guid: 65bd153fb3ce3db449e35062e36d2a3c
+  - enabled: 1
+    path: Assets/CowboyRun.unity
+    guid: b55acf661712fa9409ae26aa76e13d99
   m_configObjects: {}
