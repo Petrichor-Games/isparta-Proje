@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Lean.Touch;
 using UnityEngine;
 
 [System.Serializable]
@@ -25,10 +26,21 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController cc;
     private GameManager GM;
     public Transform Player;
+    public GameObject CamLoc;
     private Vector3 desiredPosition;
     private Rigidbody rb;
     private Vector3 movement;
+    public Camera camera;
+    public GameObject MermiLoc;
+    public GameObject MermiPrefab;
+    
+    float timeElapsed;
+    float lerpDuration = 3;
 
+    float startValue=0;
+    float endValue=10;
+    float valueToLerp;
+    private bool death = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void SwipeitLeft()
     {
-        if (GM.GetState()==STATE.ATTACK)
+        if (GM.GetState()!=STATE.RUN)
             return;
         if (e_Lane == LANE.Mid)
         {
@@ -61,9 +73,19 @@ public class PlayerMovement : MonoBehaviour
         cc.Move(vector);
     }
 
+    public void Shoot(LeanFinger LF)
+    {
+        if (GM.GetState()!=STATE.ATTACK)
+            return;
+        var mermi = Instantiate(MermiPrefab, MermiLoc.transform.position, MermiLoc.transform.rotation);
+        mermi.GetComponent<Rigidbody>().AddForce(LF.GetWorldPosition(500) * 10f);
+        Destroy(mermi, 5f);
+    }
+    
+
     public void SwipeitRight()
     {
-        if (GM.GetState()==STATE.ATTACK)
+        if (GM.GetState()!=STATE.RUN)
             return;
         if (e_Lane == LANE.Mid)
         {
@@ -83,39 +105,54 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (GM.GetState()==STATE.ATTACK)
+        if (GM.GetState()!=STATE.RUN)
         return;
         
         animator.SetTrigger("Jump");
         movement.y = 10f;
-        Debug.Log("ZIPLA");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GM.GetState() == STATE.RUN)
+        switch (GM.GetState())
         {
-            // Applying Gravity
-            if (cc.isGrounded == false)
-            {
+            case STATE.RUN :
+                if (death)
+                {
+                    return;
+                }
+            
+                // Applying Gravity
+                if (cc.isGrounded == false)
+                {
  
-                movement.y += Physics.gravity.y * 0.08f;
+                    movement.y += Physics.gravity.y * 0.08f;
  
-            }
-            var vector = new Vector3(0, movement.y * Time.deltaTime, Time.deltaTime * Speed);
-            // Applying Movement
-            cc.Move(vector);
-        }
-        else
-        {
+                }
+                var vector = new Vector3(0, movement.y * Time.deltaTime, Time.deltaTime * Speed);
+                // Applying Movement
+                cc.Move(vector);
+                break;
+            case STATE.DEAD :
+                rb.velocity = Vector3.zero;
+                break;
+            case STATE.ATTACK :
+                camera.transform.position = Vector3.Lerp(camera.transform.position, CamLoc.transform.position, Time.deltaTime);
+                camera.fieldOfView = Mathf.Lerp(camera.fieldOfView, 98, Time.deltaTime);
+                break;
+            default:
+                break;
             
         }
     }
 
     void Death()
     {
-        Destroy(GameObject.Find("Player"));
+        death = true;
+        GM.ChangeState(2);
+        animator.SetTrigger("Death");
+        Destroy(GameObject.Find("Player") , 5f);
     }
 
 
@@ -135,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("CARPTIK");
             Destroy(other.collider.gameObject);
-            Health -= 20;
+            Health -= 210;
         }
     }
 
@@ -145,6 +182,9 @@ public class PlayerMovement : MonoBehaviour
         {
             GM.ChangeState(1);
             animator.SetTrigger("Idle");
+            rb.velocity = Vector3.zero;
+            
+            
         }
     }
 }
