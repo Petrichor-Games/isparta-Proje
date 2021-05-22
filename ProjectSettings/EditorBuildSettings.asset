@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Main.unity
+    guid: 65bd153fb3ce3db449e35062e36d2a3c
+  - enabled: 1
     path: Assets/CowboyMenu.unity
     guid: 2f85c613d0263b045aac211c043524c5
   - enabled: 1
