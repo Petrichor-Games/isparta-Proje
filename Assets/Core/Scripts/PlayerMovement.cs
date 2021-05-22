@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Lean.Touch;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public enum LANE
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private LANE e_Lane = LANE.Mid;
     private float Xcordinate = 0f;
     public float Health = 100f;
+    public GameObject OyunSonuSkor;
 
     private bool SwipeLeft;
     public float Speed = 14f;
@@ -32,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
     public Camera camera;
     public GameObject MermiLoc;
     public GameObject MermiPrefab;
+    public GameObject CanSlider; 
     public GameObject menu;
+    public GameObject PARA;
+    
     
     float timeElapsed;
     float lerpDuration = 3;
@@ -50,8 +55,8 @@ public class PlayerMovement : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         cc = GetComponent<CharacterController>();
         menu.SetActive(false);
-
-        
+        CanSlider.GetComponent<Slider>().value = Health;
+        PARA.GetComponent<Text>().text = Game.Instance.Coins.ToString();
     }
 
     public void SwipeitLeft()
@@ -168,6 +173,9 @@ public class PlayerMovement : MonoBehaviour
         death = true;
         GM.ChangeState(2);
         animator.SetTrigger("Death");
+        var Metre = (transform.position.z + 26) / 10;
+
+        OyunSonuSkor.GetComponent<Text>().text = Metre.ToString("0.##") + " Metre Koştun. \n " + GM.score + " Düşman öldürdün.";
         //Destroy(GameObject.Find("Player") , 5f);
         menu.SetActive(true);
     }
@@ -179,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Death();
         }
+        PARA.GetComponent<Text>().text = Game.Instance.Coins.ToString();
     }
 
 
@@ -187,9 +196,9 @@ public class PlayerMovement : MonoBehaviour
         
         if (other.collider.GetComponent<EngelTag>()!=null)
         {
-            Debug.Log("CARPTIK");
             Destroy(other.collider.gameObject);
             Health -= 20;
+            CanSlider.GetComponent<Slider>().value = Health;
             if (Speed> 21f)
             {
                 Speed -= 7f;
