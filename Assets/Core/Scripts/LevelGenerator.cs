@@ -10,8 +10,8 @@ public class LevelGenerator : MonoBehaviour
     public Vector3 spawnOrigin;
     private Vector3 spawnPosition;
     public int chunkstospawn = 10;
-    //private int chunkCount = 0;
-    //public GameObject OyunSonuBolumu;
+    private int chunkCount = 0;
+    public GameObject OyunSonuBolumu;
 
     void OnEnable()
     {
@@ -56,18 +56,23 @@ public class LevelGenerator : MonoBehaviour
 
     void PickAndSpawnChunk()
     {
-        // if (chunkstospawn==100)
-        // {
-        //     
-        //     Instantiate(OyunSonuBolumu, spawnPosition + spawnOrigin, OyunSonuBolumu.transform.rotation);
-        // }
+        //Debug.Log(chunkCount);
+         if (chunkCount==15)
+         {
+             
+             Instantiate(OyunSonuBolumu, spawnPosition + spawnOrigin, OyunSonuBolumu.transform.rotation);
+         }
+         else if (chunkCount>16)
+         {
+             return;
+         }
         
         LevelChunkData chunkToSpawn = PickNextChunk();
 
         GameObject objectFromChunk = chunkToSpawn.LevelChunks[Random.Range(0, chunkToSpawn.LevelChunks.Length)];
         previousChunk = chunkToSpawn;
         Instantiate(objectFromChunk, spawnPosition + spawnOrigin, objectFromChunk.transform.rotation);
-        //chunkstospawn++;
+        chunkCount++;
 
     }
 
