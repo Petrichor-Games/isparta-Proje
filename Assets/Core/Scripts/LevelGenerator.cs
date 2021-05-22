@@ -78,14 +78,11 @@ public class LevelGenerator : MonoBehaviour
 
         GameObject objectFromChunk = chunkToSpawn.LevelChunks[Random.Range(0, chunkToSpawn.LevelChunks.Length)];
         previousChunk = chunkToSpawn;
-<<<<<<< Updated upstream
-        Instantiate(objectFromChunk, spawnPosition + spawnOrigin, objectFromChunk.transform.rotation);
+        var asd = Instantiate(objectFromChunk, spawnPosition + spawnOrigin, objectFromChunk.transform.rotation);
         chunkCount++;
 
-=======
-        Instantiate(objectFromChunk, spawnPosition + spawnOrigin, Quaternion.identity);
-        
->>>>>>> Stashed changes
+        SpawnCoins(asd);
+
     }
 
     public void UpdateSpawnOrigin(Vector3 originDelta)
@@ -95,13 +92,13 @@ public class LevelGenerator : MonoBehaviour
 
     public GameObject coinPrefab;
 
-    void SpawnCoins()
+    void SpawnCoins(GameObject asd)
     {
         int coinsToSpawn = 5;
         for (int i = 0; i< coinsToSpawn; i++)
         {
-            GameObject temp = Instantiate(coinPrefab,transform);
-            temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
+            GameObject temp = Instantiate(coinPrefab,asd.transform);
+            temp.transform.position = GetRandomPointInCollider(asd.GetComponent<Collider>());
         }
     }
 

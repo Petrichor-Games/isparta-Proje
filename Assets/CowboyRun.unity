@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   e_State: 0
+  score: 0
 --- !u!4 &1417691166
 Transform:
   m_ObjectHideFlags: 0
@@ -781,6 +782,8 @@ MonoBehaviour:
   spawnOrigin: {x: 0, y: 0, z: -45}
   chunkstospawn: 10
   OyunSonuBolumu: {fileID: 5425339147837526598, guid: 5f10310c2c3b59c4fbb8ff2c77366b87,
+    type: 3}
+  coinPrefab: {fileID: 7954841883639771301, guid: ec931e0ed6b08cb438af37208cf3d78c,
     type: 3}
 --- !u!1 &1511644161 stripped
 GameObject:
