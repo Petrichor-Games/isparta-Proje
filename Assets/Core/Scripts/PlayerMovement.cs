@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float Health = 100f;
 
     private bool SwipeLeft;
-    public float Speed = 7f;
+    public float Speed = 14f;
     private bool SwipeRight;
     private Animator animator;
     public float xValue;
@@ -61,11 +61,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Xcordinate = -xValue;
             e_Lane = LANE.Left;
+            animator.SetTrigger("Roll");
         }
         else if (e_Lane == LANE.Right)
         {
             Xcordinate = 0;
             e_Lane = LANE.Mid;
+            animator.SetTrigger("Roll");
         }
         var x = Xcordinate - transform.position.x;
         var vector = new Vector3(x, 0, 0);
@@ -91,11 +93,13 @@ public class PlayerMovement : MonoBehaviour
         {
             Xcordinate = xValue;
             e_Lane = LANE.Right;
+            animator.SetTrigger("Roll");
         }
         else if (e_Lane == LANE.Left)
         {
             Xcordinate = 0;
             e_Lane = LANE.Mid;
+            animator.SetTrigger("Roll");
         }
         var x = Xcordinate - transform.position.x;
         var vector = new Vector3(x, 0, 0);
@@ -118,6 +122,13 @@ public class PlayerMovement : MonoBehaviour
         switch (GM.GetState())
         {
             case STATE.RUN :
+
+                if (Speed < 40)
+                {
+                    Speed += Time.deltaTime * 0.5f;
+                }
+                
+                
                 if (death)
                 {
                     return;
@@ -172,7 +183,12 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("CARPTIK");
             Destroy(other.collider.gameObject);
-            Health -= 210;
+            Health -= 20;
+            if (Speed> 21f)
+            {
+                Speed -= 7f;
+            }
+            
         }
     }
 

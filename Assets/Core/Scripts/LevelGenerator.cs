@@ -64,12 +64,12 @@ public class LevelGenerator : MonoBehaviour
     void PickAndSpawnChunk()
     {
         //Debug.Log(chunkCount);
-         if (chunkCount==5)
+         if (chunkCount==55)
          {
              
              Instantiate(OyunSonuBolumu, spawnPosition + spawnOrigin, OyunSonuBolumu.transform.rotation);
          }
-         else if (chunkCount>5)
+         else if (chunkCount>55)
          {
              return;
          }
