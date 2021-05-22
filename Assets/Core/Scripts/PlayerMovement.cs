@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private LANE e_Lane = LANE.Mid;
     private float Xcordinate = 0f;
     public float Health = 100f;
+    public GameObject OyunSonuSkor;
 
     private bool SwipeLeft;
     public float Speed = 14f;
@@ -173,6 +174,8 @@ public class PlayerMovement : MonoBehaviour
         GM.ChangeState(2);
         animator.SetTrigger("Death");
         var Metre = (transform.position.z + 26) / 100;
+
+        OyunSonuSkor.GetComponent<Text>().text = Metre + " Metre Koştun. \n " + GM.score + " Düşman öldürdün.";
         //Destroy(GameObject.Find("Player") , 5f);
         menu.SetActive(true);
     }
