@@ -27,6 +27,7 @@ public class Dusman : MonoBehaviour
 
     void Death()
     {
+        GameObject.Find("GameManager").GetComponent<GameManager>().score++;
         anim.SetTrigger("Death");
         Destroy(this, 5f);
     }
