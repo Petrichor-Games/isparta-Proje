@@ -24,14 +24,65 @@ public class PlayerMovement : MonoBehaviour
     public float xValue;
     private CharacterController cc;
     private GameManager GM;
+    public Transform Player;
+    private Vector3 desiredPosition;
+    private Rigidbody rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         cc = GetComponent<CharacterController>();
+
+        
+    }
+
+    public void SwipeitLeft()
+    {
+        if (e_Lane == LANE.Mid)
+        {
+            Xcordinate = -xValue;
+            e_Lane = LANE.Left;
+        }
+        else if (e_Lane == LANE.Right)
+        {
+            Xcordinate = 0;
+            e_Lane = LANE.Mid;
+        }
+        var x = Xcordinate - transform.position.x;
+        var vector = new Vector3(x, 0, 0);
+
+        cc.Move(vector);
+    }
+
+    public void SwipeitRight()
+    {
+        if (e_Lane == LANE.Mid)
+        {
+            Xcordinate = xValue;
+            e_Lane = LANE.Right;
+        }
+        else if (e_Lane == LANE.Left)
+        {
+            Xcordinate = 0;
+            e_Lane = LANE.Mid;
+        }
+        var x = Xcordinate - transform.position.x;
+        var vector = new Vector3(x, 0, 0);
+
+        cc.Move(vector);
+    }
+
+    public void Jump()
+    {
+        animator.SetTrigger("Jump");
+        // rb.AddForce(0,10,0);
+         cc.Move(Vector3.up * 10f); 
+        
+        Debug.Log("ZIPLA");
     }
 
     // Update is called once per frame
@@ -39,61 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GM.e_State == STATE.RUN)
         {
-            
-            SwipeLeft = Input.GetKeyDown(KeyCode.A);
-            SwipeRight = Input.GetKeyDown(KeyCode.D);
-            float x1 = 0;
-            float x2;
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                x1 = Input.mousePosition.x;
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                x2 = Input.mousePosition.x;
-
-                if (x1 > x2)
-                {
-                    SwipeLeft = true;
-                }
-
-                if (x2 > x1)
-                {
-                    SwipeRight = true;
-                }
-            }
-
-            if (SwipeLeft)
-            {
-                if (e_Lane == LANE.Mid)
-                {
-                    Xcordinate = -xValue;
-                    e_Lane = LANE.Left;
-                }
-                else if (e_Lane == LANE.Right)
-                {
-                    Xcordinate = 0;
-                    e_Lane = LANE.Mid;
-                }
-            }
-            else if (SwipeRight)
-            {
-                if (e_Lane == LANE.Mid)
-                {
-                    Xcordinate = xValue;
-                    e_Lane = LANE.Right;
-                }
-                else if (e_Lane == LANE.Left)
-                {
-                    Xcordinate = 0;
-                    e_Lane = LANE.Mid;
-                }
-            }
-
-            var x = Xcordinate - transform.position.x;
-            var vector = new Vector3(x, 0, Time.deltaTime * Speed);
+            var vector = new Vector3(0, 0, Time.deltaTime * Speed);
 
             cc.Move(vector);
         }
