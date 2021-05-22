@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     public float xValue;
     private CharacterController cc;
     private GameManager GM;
-    public Transform Player;
     public GameObject CamLoc;
     private Vector3 desiredPosition;
     private Rigidbody rb;
@@ -33,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera camera;
     public GameObject MermiLoc;
     public GameObject MermiPrefab;
+    public GameObject menu;
     
     float timeElapsed;
     float lerpDuration = 3;
@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         cc = GetComponent<CharacterController>();
+        menu.SetActive(false);
 
         
     }
@@ -111,6 +112,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GM.GetState()!=STATE.RUN)
         return;
+        if (cc.isGrounded==false)
+        {
+            return;
+        }
         
         animator.SetTrigger("Jump");
         movement.y = 10f;
@@ -163,7 +168,8 @@ public class PlayerMovement : MonoBehaviour
         death = true;
         GM.ChangeState(2);
         animator.SetTrigger("Death");
-        Destroy(GameObject.Find("Player") , 5f);
+        //Destroy(GameObject.Find("Player") , 5f);
+        menu.SetActive(true);
     }
 
 

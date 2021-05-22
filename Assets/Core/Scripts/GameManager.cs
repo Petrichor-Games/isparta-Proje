@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public int score;
     public static GameManager inst;
+    
+    
+    
 
 
     public STATE GetState() => e_State;
