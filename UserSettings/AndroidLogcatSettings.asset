@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "258d2c908c0c7ece",
+    "m_SelectedDeviceId": "PLEGAR17A2621326",
     "m_SelectedPackage": {
-        "deviceId": "258d2c908c0c7ece",
+        "deviceId": "PLEGAR17A2621326",
         "name": "com.DefaultCompany.ispartaProje",
-        "processId": 2969,
+        "processId": 15377,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -60,6 +60,12 @@
             "deviceId": "258d2c908c0c7ece",
             "name": "com.DefaultCompany.ispartaProje",
             "processId": 2969,
+            "exited": false
+        },
+        {
+            "deviceId": "PLEGAR17A2621326",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 15377,
             "exited": false
         }
     ],
