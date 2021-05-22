@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "258d2c908c0c7ece",
     "m_SelectedPackage": {
-        "deviceId": "258d2c908c0c7ece",
-        "name": "com.DefaultCompany.ispartaProje",
-        "processId": 17697,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,20 +11,38 @@
         {
             "deviceId": "258d2c908c0c7ece",
             "name": "com.DefaultCompany.ispartaProje",
-            "processId": 1289,
-            "exited": false
-        },
-        {
-            "deviceId": "258d2c908c0c7ece",
-            "name": "com.DefaultCompany.ispartaProje",
-            "processId": 17565,
-            "exited": false
-        },
-        {
-            "deviceId": "258d2c908c0c7ece",
-            "name": "com.DefaultCompany.ispartaProje",
             "processId": 17697,
+            "exited": true
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 21104,
+            "exited": true
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 10838,
+            "exited": true
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.sec.android.app.launcher",
+            "processId": 5697,
             "exited": false
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 11173,
+            "exited": true
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 12018,
+            "exited": true
         }
     ],
     "m_Tags": {

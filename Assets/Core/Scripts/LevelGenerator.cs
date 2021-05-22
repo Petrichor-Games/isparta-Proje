@@ -58,7 +58,7 @@ public class LevelGenerator : MonoBehaviour
 
         GameObject objectFromChunk = chunkToSpawn.LevelChunks[Random.Range(0, chunkToSpawn.LevelChunks.Length)];
         previousChunk = chunkToSpawn;
-        Instantiate(objectFromChunk, spawnPosition + spawnOrigin, Quaternion.identity);
+        Instantiate(objectFromChunk, spawnPosition + spawnOrigin, objectFromChunk.transform.rotation);
 
     }
 

@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetTrigger("Jump");
         // rb.AddForce(0,10,0);
          //cc.Move(Vector3.up * 50f); 
-         movement.y = 50f;
+         movement.y = 10f;
         Debug.Log("ZIPLA");
     }
 
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             if (cc.isGrounded == false)
             {
  
-                movement.y += Physics.gravity.y * 0.05f;
+                movement.y += Physics.gravity.y * 0.08f;
  
             }
             var vector = new Vector3(0, movement.y * Time.deltaTime, Time.deltaTime * Speed);
