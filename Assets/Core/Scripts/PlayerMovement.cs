@@ -173,9 +173,9 @@ public class PlayerMovement : MonoBehaviour
         death = true;
         GM.ChangeState(2);
         animator.SetTrigger("Death");
-        var Metre = (transform.position.z + 26) / 100;
+        var Metre = (transform.position.z + 26) / 10;
 
-        OyunSonuSkor.GetComponent<Text>().text = Metre + " Metre Koştun. \n " + GM.score + " Düşman öldürdün.";
+        OyunSonuSkor.GetComponent<Text>().text = Metre.ToString("0.##") + " Metre Koştun. \n " + GM.score + " Düşman öldürdün.";
         //Destroy(GameObject.Find("Player") , 5f);
         menu.SetActive(true);
     }
