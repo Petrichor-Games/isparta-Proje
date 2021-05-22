@@ -28,6 +28,7 @@ public class LevelGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             PickAndSpawnChunk();
+            
         }
     }
 
@@ -38,8 +39,13 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < chunkstospawn; i++)
         {
             PickAndSpawnChunk();
+            
         }
+
+        
     }
+
+   
 
     LevelChunkData PickNextChunk()
     {
@@ -51,6 +57,7 @@ public class LevelGenerator : MonoBehaviour
         nextChunk = LevelChunkData[Random.Range(0, allowedChunkList.Count)];
 
         return nextChunk;
+
 
     }
 
@@ -71,13 +78,49 @@ public class LevelGenerator : MonoBehaviour
 
         GameObject objectFromChunk = chunkToSpawn.LevelChunks[Random.Range(0, chunkToSpawn.LevelChunks.Length)];
         previousChunk = chunkToSpawn;
+<<<<<<< Updated upstream
         Instantiate(objectFromChunk, spawnPosition + spawnOrigin, objectFromChunk.transform.rotation);
         chunkCount++;
 
+=======
+        Instantiate(objectFromChunk, spawnPosition + spawnOrigin, Quaternion.identity);
+        
+>>>>>>> Stashed changes
     }
 
     public void UpdateSpawnOrigin(Vector3 originDelta)
     {
         spawnOrigin = spawnOrigin + originDelta;
     }
+
+    public GameObject coinPrefab;
+
+    void SpawnCoins()
+    {
+        int coinsToSpawn = 5;
+        for (int i = 0; i< coinsToSpawn; i++)
+        {
+            GameObject temp = Instantiate(coinPrefab,transform);
+            temp.transform.position = GetRandomPointInCollider(GetComponent<Collider>());
+        }
+    }
+
+    Vector3 GetRandomPointInCollider(Collider collider)
+    {
+        Vector3 point = new Vector3(
+            Random.Range(collider.bounds.min.x, collider.bounds.max.x),
+            Random.Range(collider.bounds.min.y, collider.bounds.max.y),
+            Random.Range(collider.bounds.min.z, collider.bounds.max.z)
+            );
+
+        if (point != collider.ClosestPoint(point))
+        {
+            point = GetRandomPointInCollider(collider);
+        }
+
+        point.y = 1;
+        return point;
+    }
+
+
 }
