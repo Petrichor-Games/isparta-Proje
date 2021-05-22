@@ -6,12 +6,27 @@ public class coinLine : MonoBehaviour
 {
     public GameObject coinPrefab;
     public GameObject coinSpawn;
+    private int durum;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        SpawnCoins(coinSpawn);
+        durum = Random.Range(0,2);
+
+        switch (durum)
+        {
+            case 1:
+                SpawnCoins(coinSpawn);
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+                break;
+        }
+                
     }
 
     // Update is called once per frame
