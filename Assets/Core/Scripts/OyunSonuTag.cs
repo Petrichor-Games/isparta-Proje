@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class OyunSonuTag : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //fight ekranı algılaması için boş kod 
 }

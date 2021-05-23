@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private STATE e_State = STATE.RUN;
 
     public int score;
-    public static GameManager inst;
+
     public GameObject Player;
     
     
@@ -32,17 +32,9 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<Animator>().SetBool("Kos",false);
         }
     }
-
-
+    
     public STATE GetState() => e_State;
-
-
-    private void Awake()
-    {
-        inst = this;
-    }
-
-
+    
     public void ChangeState(int state)
     {
         switch (state)

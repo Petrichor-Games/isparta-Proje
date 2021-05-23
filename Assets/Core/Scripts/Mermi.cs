@@ -5,18 +5,7 @@ using UnityEngine;
 
 public class Mermi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    //TA TA TA DUSMANIN KAFASINA MERMI
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.GetComponent<Dusman>()!=null)

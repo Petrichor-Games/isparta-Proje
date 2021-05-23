@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerExit : MonoBehaviour
 {
     public float delay = 5f;
+    //alandan cıkınca silicek girince alan eklicek algılama flan 
 
     public delegate void ExitAction();
     public static event ExitAction OnChunkExited;
@@ -34,7 +35,5 @@ public class TriggerExit : MonoBehaviour
         transform.root.gameObject.SetActive(false);
 
     }
-
-
 
 }

@@ -7,9 +7,7 @@ public class coinLine : MonoBehaviour
     public GameObject coinPrefab;
     public GameObject coinSpawn;
     private int durum;
-
-
-    // Start is called before the first frame update
+    
     void Start()
     {
         durum = Random.Range(0,2);
@@ -28,14 +26,7 @@ public class coinLine : MonoBehaviour
         }
                 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-     
-
-    }
+    
 
     void SpawnCoins(GameObject asd)
     {

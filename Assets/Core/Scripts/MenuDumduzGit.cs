@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class MenuDumduzGit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        //DÜMDÜZ YARDIR
         transform.position = new Vector3(0,0, transform.position.z + .1f);
     }
 }

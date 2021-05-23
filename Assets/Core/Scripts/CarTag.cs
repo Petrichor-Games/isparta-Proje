@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarTag : MonoBehaviour
 {
+    //karakteri algılaması için boş script
 
     private void OnCollisionEnter(Collision collision)
     {

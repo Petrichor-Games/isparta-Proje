@@ -221,9 +221,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void CanEkle()
     {
-        if (Health>0&&Health<199)
+        if (Health>0&&Health<190)
         {
-            Health=+2;
+            Health++;
             CanSlider.GetComponent<Slider>().value = Health;
         }
         
@@ -236,8 +236,6 @@ public class PlayerMovement : MonoBehaviour
             GM.ChangeState(1);
             animator.SetTrigger("Idle");
             rb.velocity = Vector3.zero;
-            
-            
         }
     }
 }
