@@ -219,6 +219,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void CanEkle()
+    {
+        if (Health>0&&Health<199)
+        {
+            Health=+2;
+            CanSlider.GetComponent<Slider>().value = Health;
+        }
+        
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<OyunSonuTag>()!=null)

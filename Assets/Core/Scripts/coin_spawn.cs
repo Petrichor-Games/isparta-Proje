@@ -37,6 +37,10 @@ public class coin_spawn : MonoBehaviour
         //GameManager.inst.score++;
         Game.Instance.Coins++;
         audioSource.PlayOneShot(clip, 1f);
+
+        GameObject.Find("Player").GetComponent<PlayerMovement>().CanEkle();
+        
+       
         //Destroy this coin object
         Destroy(gameObject);
     }
