@@ -305,7 +305,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1392921852}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 200
   m_WholeNumbers: 0
   m_Value: 46.3
   m_OnValueChanged:
@@ -659,7 +659,7 @@ MonoBehaviour:
   CamLoc: {fileID: 1671360463}
   camera: {fileID: 1855743185}
   MermiLoc: {fileID: 328995487}
-  MermiPrefab: {fileID: 4067137382929581718, guid: 7d391cd51ad232d4fb693d43457204f1,
+  MermiPrefab: {fileID: 4067137382929581718, guid: 6fb17d5229b3a5749b09baa23c647b39,
     type: 3}
   CanSlider: {fileID: 161810279}
   menu: {fileID: 2097484043}

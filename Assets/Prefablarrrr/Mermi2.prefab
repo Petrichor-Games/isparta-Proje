@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 605255294562959768}
   - component: {fileID: 4715701747810475213}
   m_Layer: 0
-  m_Name: Mermi
-  m_TagString: mermi
+  m_Name: Mermi2
+  m_TagString: mermi2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

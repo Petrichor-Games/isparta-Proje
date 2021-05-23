@@ -8,6 +8,7 @@ TagManager:
   - DusmanSpawn
   - mermi
   - enemy
+  - mermi2
   layers:
   - Default
   - TransparentFX
