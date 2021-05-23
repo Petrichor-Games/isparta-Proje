@@ -26,7 +26,9 @@ public class Dusman : MonoBehaviour
     {
         if (timeBtwShots <= 0)
         {
-            if ((Target.transform.position.x - transform.position.x) < 50)
+            var tests = transform.position.z - Target.transform.position.z;
+            
+            if (tests < 20)
             {
                 var mermi = Instantiate(MermiPrefab, AtesEt.transform.position, Quaternion.identity);
                 var test = Target.transform.position;

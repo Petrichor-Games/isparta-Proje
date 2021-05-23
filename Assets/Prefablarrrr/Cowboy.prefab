@@ -285,7 +285,7 @@ MonoBehaviour:
   MermiPrefab: {fileID: 4067137382929581718, guid: 7d391cd51ad232d4fb693d43457204f1,
     type: 3}
   AtesEt: {fileID: 8979479528266883156}
-  startTimeBtwShots: 1
+  startTimeBtwShots: 2
 --- !u!1 &7368357419004279299
 GameObject:
   m_ObjectHideFlags: 0
