@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cd17ca43228c846aaab674007c252e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 5100
+  Health: 200
   OyunSonuSkor: {fileID: 446622743}
   Speed: 14
   xValue: 2
