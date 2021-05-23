@@ -19,7 +19,13 @@ public class GameManager : MonoBehaviour
     public static GameManager inst;
     
     
-    
+    private void Update()
+    {
+        if (score==2)
+        {
+            ChangeState(0);
+        }
+    }
 
 
     public STATE GetState() => e_State;

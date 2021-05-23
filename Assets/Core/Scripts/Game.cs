@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,11 @@ public class Game : MonoBehaviour
 {
     #region SIngleton:Game
     public static Game Instance;
+
+
+    
+
+
     void Awake()
     {
         if(Instance==null)

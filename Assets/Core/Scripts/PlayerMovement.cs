@@ -85,7 +85,8 @@ public class PlayerMovement : MonoBehaviour
         if (GM.GetState()!=STATE.ATTACK)
             return;
         var mermi = Instantiate(MermiPrefab, MermiLoc.transform.position, MermiLoc.transform.rotation);
-        mermi.GetComponent<Rigidbody>().AddForce(LF.GetWorldPosition(500) * 10f);
+        mermi.transform.LookAt(LF.GetWorldPosition(10));
+        mermi.GetComponent<Rigidbody>().AddForce(mermi.transform.forward * 1900f);
         animator.SetTrigger("shoot");
         Destroy(mermi, 5f);
     }
