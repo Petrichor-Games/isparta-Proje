@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,14 @@ using UnityEngine;
 public class coin_spawn : MonoBehaviour
 {
     public float turnSpeed = 90f;
+    public AudioSource audioSource;
+    public AudioClip clip;
+
+    
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     //Check that the object we collided with is the player
     private void OnTriggerEnter(Collider other)
@@ -12,9 +21,10 @@ public class coin_spawn : MonoBehaviour
         //
         if (other.gameObject.GetComponent<GameManager>() != null)
         {
-            Destroy(gameObject);
-            return;
             
+            Destroy(gameObject);
+            
+            return;
         }
         
         //check that the object we collided with is the player
@@ -26,7 +36,7 @@ public class coin_spawn : MonoBehaviour
         //Add to the player's score
         //GameManager.inst.score++;
         Game.Instance.Coins++;
-        
+        audioSource.PlayOneShot(clip, 1f);
         //Destroy this coin object
         Destroy(gameObject);
     }

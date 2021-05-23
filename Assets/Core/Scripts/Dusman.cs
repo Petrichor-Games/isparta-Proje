@@ -14,6 +14,8 @@ public class Dusman : MonoBehaviour
     public float startTimeBtwShots;
     private bool oldumMQ =false;
     public GameObject Kendisi;
+    public AudioSource audioSource;
+    public AudioClip clip;
 
     private GameObject Target;
     
@@ -22,6 +24,7 @@ public class Dusman : MonoBehaviour
     {
         anim.GetComponent<Animator>();
         Target = GameObject.Find("Player");
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -38,6 +41,7 @@ public class Dusman : MonoBehaviour
                 mermi.transform.LookAt(test);
                 mermi.GetComponent<Rigidbody>().AddForce(mermi.transform.forward * 1900f);
                 anim.SetTrigger("shoot");
+                audioSource.PlayOneShot(clip, 1f);
                 Destroy(mermi, 5f);
                 timeBtwShots = startTimeBtwShots;
             }

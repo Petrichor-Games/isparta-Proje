@@ -37,7 +37,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject CanSlider; 
     public GameObject menu;
     public GameObject PARA;
-    
+    public AudioSource audioSource;
+    public AudioClip krilmaSesi;
     
     float timeElapsed;
     float lerpDuration = 3;
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -204,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Speed -= 7f;
             }
-            
+            audioSource.PlayOneShot(krilmaSesi, 1f);
         }
 
        
