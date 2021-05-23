@@ -645,7 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87cd17ca43228c846aaab674007c252e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 5100
   OyunSonuSkor: {fileID: 446622743}
   Speed: 14
   xValue: 2
@@ -1872,7 +1872,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
   FirstChunk: {fileID: 11400000, guid: 7ed43a328e1d77e4fbc4e9dac04964a9, type: 2}
   spawnOrigin: {x: 0, y: 0, z: -45}
-  chunkstospawn: 10
+  chunkstospawn: 3
   OyunSonuBolumu: {fileID: 5425339147837526598, guid: 5f10310c2c3b59c4fbb8ff2c77366b87,
     type: 3}
 --- !u!1 &1511644161 stripped
