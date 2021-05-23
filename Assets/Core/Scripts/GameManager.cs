@@ -17,13 +17,19 @@ public class GameManager : MonoBehaviour
 
     public int score;
     public static GameManager inst;
+    public GameObject Player;
     
     
     private void Update()
     {
-        if (score==2)
+        if (GameObject.FindGameObjectsWithTag("enemy").Length==0)
         {
             ChangeState(0);
+            Player.GetComponent<Animator>().SetBool("Kos",true);
+        }
+        else
+        {
+            Player.GetComponent<Animator>().SetBool("Kos",false);
         }
     }
 

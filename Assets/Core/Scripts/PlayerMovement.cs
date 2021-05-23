@@ -141,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
                 
                 if (death)
                 {
+                    rb.velocity = Vector3.zero;
                     return;
                 }
             
@@ -206,12 +207,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (other.gameObject.name == "mermi")
-        {
-            Destroy(other.collider.gameObject);
-            Health -= 20;
-            CanSlider.GetComponent<Slider>().value = Health;
-        }
+       
         
         if (other.gameObject.tag == "mermi")
         {

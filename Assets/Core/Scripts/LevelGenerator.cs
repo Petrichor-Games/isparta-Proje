@@ -63,16 +63,16 @@ public class LevelGenerator : MonoBehaviour
 
     void PickAndSpawnChunk()
     {
-        //Debug.Log(chunkCount);
-         if (chunkCount==5)
+        
+         if (chunkCount%15==0 && chunkCount != 0)
          {
              
              Instantiate(OyunSonuBolumu, spawnPosition + spawnOrigin, OyunSonuBolumu.transform.rotation);
+             
+             previousChunk.chunkSize = new Vector2(20, 20);
+
          }
-         else if (chunkCount>5)
-         {
-             return;
-         }
+         
         
         LevelChunkData chunkToSpawn = PickNextChunk();
 

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "258d2c908c0c7ece",
         "name": "com.DefaultCompany.ispartaProje",
-        "processId": 31081,
+        "processId": 13587,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -66,6 +66,12 @@
             "deviceId": "258d2c908c0c7ece",
             "name": "com.DefaultCompany.ispartaProje",
             "processId": 31081,
+            "exited": false
+        },
+        {
+            "deviceId": "258d2c908c0c7ece",
+            "name": "com.DefaultCompany.ispartaProje",
+            "processId": 13587,
             "exited": false
         },
         {

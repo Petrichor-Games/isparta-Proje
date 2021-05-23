@@ -1842,6 +1842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  Player: {fileID: 374759586}
 --- !u!4 &1417691166
 Transform:
   m_ObjectHideFlags: 0

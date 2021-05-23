@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 6105349815100995206}
   m_Layer: 0
   m_Name: Cowboy
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,6 +286,7 @@ MonoBehaviour:
     type: 3}
   AtesEt: {fileID: 8979479528266883156}
   startTimeBtwShots: 2
+  Kendisi: {fileID: 7368357419004276883}
 --- !u!1 &7368357419004279299
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class Dusman : MonoBehaviour
     public GameObject AtesEt;
     private float timeBtwShots;
     public float startTimeBtwShots;
+    private bool oldumMQ =false;
+    public GameObject Kendisi;
 
     private GameObject Target;
     
@@ -24,7 +26,7 @@ public class Dusman : MonoBehaviour
 
     private void Update()
     {
-        if (timeBtwShots <= 0)
+        if (timeBtwShots <= 0 && oldumMQ!=true)
         {
             var tests = transform.position.z - Target.transform.position.z;
             
@@ -49,6 +51,10 @@ public class Dusman : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (oldumMQ)
+        {
+            return;
+        }
         
         if (damage>=Health)
         {
@@ -60,9 +66,14 @@ public class Dusman : MonoBehaviour
 
     void Death()
     {
-        Debug.Log("Öldüm çık");
+        
+        if (!oldumMQ)
+        {
+            Debug.Log("Öldüm çık");
+            oldumMQ = true;
         GameObject.Find("GameManager").GetComponent<GameManager>().score++;
         anim.SetTrigger("Death");
-        Destroy(this, 5f);
+        Destroy(Kendisi, 2f); 
+        }
     }
 }
