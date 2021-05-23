@@ -6,6 +6,7 @@ TagManager:
   tags:
   - 'Engel '
   - DusmanSpawn
+  - mermi
   layers:
   - Default
   - TransparentFX

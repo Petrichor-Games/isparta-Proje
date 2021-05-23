@@ -61,8 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void SwipeitLeft()
     {
-        if (GM.GetState()!=STATE.RUN)
-            return;
+        
         if (e_Lane == LANE.Mid)
         {
             Xcordinate = -xValue;
@@ -87,14 +86,14 @@ public class PlayerMovement : MonoBehaviour
             return;
         var mermi = Instantiate(MermiPrefab, MermiLoc.transform.position, MermiLoc.transform.rotation);
         mermi.GetComponent<Rigidbody>().AddForce(LF.GetWorldPosition(500) * 10f);
+        animator.SetTrigger("shoot");
         Destroy(mermi, 5f);
     }
     
 
     public void SwipeitRight()
     {
-        if (GM.GetState()!=STATE.RUN)
-            return;
+        
         if (e_Lane == LANE.Mid)
         {
             Xcordinate = xValue;
@@ -204,6 +203,20 @@ public class PlayerMovement : MonoBehaviour
                 Speed -= 7f;
             }
             
+        }
+
+        if (other.gameObject.name == "mermi")
+        {
+            Destroy(other.collider.gameObject);
+            Health -= 20;
+            CanSlider.GetComponent<Slider>().value = Health;
+        }
+        
+        if (other.gameObject.tag == "mermi")
+        {
+            Destroy(other.collider.gameObject);
+            Health -= 20;
+            CanSlider.GetComponent<Slider>().value = Health;
         }
     }
 

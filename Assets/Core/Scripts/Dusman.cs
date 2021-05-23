@@ -29,7 +29,11 @@ public class Dusman : MonoBehaviour
             if ((Target.transform.position.x - transform.position.x) < 50)
             {
                 var mermi = Instantiate(MermiPrefab, AtesEt.transform.position, Quaternion.identity);
-                mermi.GetComponent<Rigidbody>().AddForce(-Target.transform.position * 10f);
+                var test = Target.transform.position;
+                test.y += 2;
+                mermi.transform.LookAt(test);
+                mermi.GetComponent<Rigidbody>().AddForce(mermi.transform.forward * 1900f);
+                anim.SetTrigger("shoot");
                 Destroy(mermi, 5f);
                 timeBtwShots = startTimeBtwShots;
             }
